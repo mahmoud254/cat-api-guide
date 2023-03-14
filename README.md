@@ -72,7 +72,7 @@ Make sure to replace ACCOUNT_ID by the account id and CODEBUILD_ROLE with the co
 ![Alt text](./docs/aws_auth.png?raw=true "Architecture")
 
 13. Now we can run the build and deploy the app to the EKS cluster
-![Alt text](./docs/pipeline_finished.png?raw=true "Architecture")
+![Alt text](./docs/pipeline_finished_new.png?raw=true "Architecture")
 
 # 3. Creating pipeline for PR to tun unit tests
 The steps are mostly the same, I will add images for the differences:
