@@ -46,7 +46,7 @@ but a better approch is leave it and select which branch is built in the buildsp
 - REPOSITORY  --> cat images backend ecr uri
 - EKS_KUBECTL_ROLE_ARN --> the arn of role created in step 2
 - EKS_CLUSTER_NAME  --> the name of the eks cluster
-![Alt text](./docs/pipeline_env.png?raw=true "Architecture") 
+![Alt text](./docs/pipeline_env_new.png?raw=true "Architecture") 
 
 9. Now we can click the Create button. 
 
