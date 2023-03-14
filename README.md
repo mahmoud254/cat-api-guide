@@ -13,8 +13,7 @@ subents can access the mongo database.
 
 # Creating pipeline for push events to deploy the app (there's another section for running the unit tests on PR)
 
-1. We first need to create a secret in secrets manager that will hold the env variables for our backend app.
-![Alt text](./docs/secret.png?raw=true "Architecture")
+
 
 2. We now need to create the role that will be assummed by the pipeline to run the kubectl commands, the policy
 that will be attached to the role can be seen in 'docs/EKS_ROLE_CODEBUILD_POLICY.json'. Make sure to replace the 'SECRET_ARN' 
