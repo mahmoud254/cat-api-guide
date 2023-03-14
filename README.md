@@ -1,4 +1,4 @@
-# Deploying Atlas MongoDB
+# 1. Deploying Atlas MongoDB
 
 1. Deploying the database is very simple, I choose shared becuase it's free
 ![Alt text](./docs/mongo_1.png?raw=true "Architecture")
@@ -11,9 +11,8 @@ subents can access the mongo database.
 3. After the database is deployed, you can connect to it
 ![Alt text](./docs/mongo_3.png?raw=true "Architecture")
 
-<br/>
-<br/>
-# Creating pipeline for push events to deploy the app (there's another section for running the unit tests on PR)
+
+# 2. Creating pipeline for push events to deploy the app (there's another section for running the unit tests on PR)
 
 1. We first need to create a secret in secrets manager that will hold the env variables for our backend app.
 ![Alt text](./docs/secret_new.png?raw=true "Architecture")
@@ -73,6 +72,26 @@ Make sure to replace ACCOUNT_ID by the account id and CODEBUILD_ROLE with the co
 ![Alt text](./docs/aws_auth.png?raw=true "Architecture")
 
 13. Now we can run the build and deploy the app to the EKS cluster
+![Alt text](./docs/pipeline_finished.png?raw=true "Architecture")
 
+# 3. Creating pipeline for PR to tun unit tests
+The steps are mostly the same, I will add images for the differences:
 
-# Creating pipeline for push events to deploy the app (there's another section for running the unit tests on PR)
+1. Note how we changed the event type to only be PULL_REQUEST_CREATED
+![Alt text](./docs/pr_1.png?raw=true "Architecture")
+
+2. Note how we changed the image to be (aws/codbuild/amzonlinux2_x86_64-standard:4.0) because this image 
+   has node js version 16.
+![Alt text](./docs/pr_2.png?raw=true "Architecture")
+
+3. We also add the backend applicatin env vars, (Mongoose connection, redis, port,...) because those 
+   needs to be exposed while testing the application.
+![Alt text](./docs/pr_3.png?raw=true "Architecture")
+
+4. We also edit the buildspec file location to the buildspec for the tests
+![Alt text](./docs/pr_4.png?raw=true "Architecture")
+
+5. That's it. We dont't need to edit roles or create new role/
+![Alt text](./docs/pr_5.png?raw=true "Architecture")
+
+# 4. Seeing the application in action
