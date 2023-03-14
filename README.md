@@ -11,6 +11,8 @@ subents can access the mongo database.
 3. After the database is deployed, you can connect to it
 ![Alt text](./docs/mongo_3.png?raw=true "Architecture")
 
+<br/>
+<br/>
 # Creating pipeline for push events to deploy the app (there's another section for running the unit tests on PR)
 
 1. We first need to create a secret in secrets manager that will hold the env variables for our backend app.
@@ -71,3 +73,6 @@ Make sure to replace ACCOUNT_ID by the account id and CODEBUILD_ROLE with the co
 ![Alt text](./docs/aws_auth.png?raw=true "Architecture")
 
 13. Now we can run the build and deploy the app to the EKS cluster
+
+
+# Creating pipeline for push events to deploy the app (there's another section for running the unit tests on PR)
