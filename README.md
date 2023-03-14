@@ -106,3 +106,9 @@ The steps are mostly the same, I will add images for the differences:
 3. If we go back to the frontend app and refresh (use http not https) note that the error in chrome's developer tool happens when
    you visit the frontend on https, and that's expected.
 ![Alt text](./docs/test_4.png?raw=true "Architecture")
+
+# 5. ArgoCD Example
+
+1. The 'application.yaml' file exists in the backend repo in the 'Kubernetes/dev' folder, we apply it
+2. Here's an image from ArgoCD dashboard
+![Alt text](./docs/argocd.png?raw=true "Architecture")
