@@ -95,3 +95,14 @@ The steps are mostly the same, I will add images for the differences:
 ![Alt text](./docs/pr_5.png?raw=true "Architecture")
 
 # 4. Seeing the application in action
+
+1. We visit the the front end app, since no files have been uploaded yet, we will get the 404 image
+![Alt text](./docs/test_1.png?raw=true "Architecture")
+
+2. We visit the backend to upload the image
+![Alt text](./docs/test_2.png?raw=true "Architecture")
+![Alt text](./docs/test_3.png?raw=true "Architecture")
+
+3. If we go back to the frontend app and refresh (use http not https) note that the error in chrome's developer tool happens when
+   you visit the frontend on https, and that's expected.
+![Alt text](./docs/test_4.png?raw=true "Architecture")
