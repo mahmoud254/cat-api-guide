@@ -63,7 +63,7 @@ Make sure to replace ACCOUNT_ID by the account id and CODEBUILD_ROLE with the co
 - kubectl edit cm -n kube-system aws-auth
 - then we add:
 ```bash
-- rolearn: arn:aws:iam::971764590821:role/EksCICDDemoKubectlRole
+- rolearn: arn:aws:iam::ACCOUNT_ID:role/EksCICDDemoKubectlRole
   username: EksCICDDemoKubectlRole
   groups:
   - system:masters
