@@ -1,4 +1,9 @@
-# 1. Deploying Atlas MongoDB
+
+
+# 1. Deploying main infrastructure
+check this link https://github.com/mahmoud254/redis-demo-infra
+
+# 2. Deploying Atlas MongoDB
 
 1. Deploying the database is very simple, I choose shared becuase it's free
 ![Alt text](./docs/mongo_1.png?raw=true "Architecture")
@@ -11,8 +16,10 @@ subents can access the mongo database.
 3. After the database is deployed, you can connect to it
 ![Alt text](./docs/mongo_3.png?raw=true "Architecture")
 
+# 2. Creating helm repository
+check https://github.com/mahmoud254/cats-helm-chart
 
-# 2. Creating pipeline for push events to deploy the app (there's another section for running the unit tests on PR)
+# 3. Creating pipeline for push events to deploy the app (there's another section for running the unit tests on PR)
 
 1. We first need to create a secret in secrets manager that will hold the env variables for our backend app.
 ![Alt text](./docs/secret_new.png?raw=true "Architecture")
