@@ -3,7 +3,10 @@
 # 1. Deploying main infrastructure
 check this link https://github.com/mahmoud254/redis-demo-infra
 
-# 2. Deploying Atlas MongoDB
+# 2. Creating helm repository
+check https://github.com/mahmoud254/cats-helm-chart
+
+# 3. Deploying Atlas MongoDB
 
 1. Deploying the database is very simple, I choose shared becuase it's free
 ![Alt text](./docs/mongo_1.png?raw=true "Architecture")
@@ -16,10 +19,7 @@ subents can access the mongo database.
 3. After the database is deployed, you can connect to it
 ![Alt text](./docs/mongo_3.png?raw=true "Architecture")
 
-# 2. Creating helm repository
-check https://github.com/mahmoud254/cats-helm-chart
-
-# 3. Creating pipeline for push events to deploy the app (there's another section for running the unit tests on PR)
+# 4. Creating pipeline for push events to deploy the app (there's another section for running the unit tests on PR)
 
 1. We first need to create a secret in secrets manager that will hold the env variables for our backend app.
 ![Alt text](./docs/secret_new.png?raw=true "Architecture")
@@ -81,7 +81,7 @@ Make sure to replace ACCOUNT_ID by the account id and CODEBUILD_ROLE with the co
 13. Now we can run the build and deploy the app to the EKS cluster
 ![Alt text](./docs/pipeline_finished_new.png?raw=true "Architecture")
 
-# 3. Creating pipeline for PR to tun unit tests
+# 5. Creating pipeline for PR to tun unit tests
 The steps are mostly the same, I will add images for the differences:
 
 1. Note how we changed the event type to only be PULL_REQUEST_CREATED
@@ -101,7 +101,7 @@ The steps are mostly the same, I will add images for the differences:
 5. That's it. We dont't need to edit roles or create new role/
 ![Alt text](./docs/pr_5.png?raw=true "Architecture")
 
-# 4. Seeing the application in action
+# 6. Seeing the application in action
 
 1. We visit the the front end app, since no files have been uploaded yet, we will get the 404 image
 ![Alt text](./docs/test_1.png?raw=true "Architecture")
@@ -114,7 +114,7 @@ The steps are mostly the same, I will add images for the differences:
    you visit the frontend on https, and that's expected.
 ![Alt text](./docs/test_4.png?raw=true "Architecture")
 
-# 5. ArgoCD Example
+# 7. ArgoCD Example
 
 1. The 'application.yaml' file exists in the backend repo in the 'Kubernetes/dev' folder, we apply it
 2. Here's an image from ArgoCD dashboard
